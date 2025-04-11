@@ -1,0 +1,23 @@
+.button {
+    padding: 8px;
+    border: 1px solid var(--color-text);
+    border-radius: 50%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    cursor: pointer;
+
+    /* Плавные переходы для всех изменяемых свойств */
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform 0.2s ease; /* Для анимации нажатия */
+}
+
+.button:hover {
+    transform: scale(1.15);
+}
+
+.button:active {
+    transform: scale(0.9);
+}

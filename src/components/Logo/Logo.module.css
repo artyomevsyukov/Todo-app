@@ -1,0 +1,11 @@
+.logo {
+    width: 180px;
+}
+
+[data-theme='light'] .logo {
+    filter: brightness(0) invert(0); /* Чёрный в светлой теме */
+}
+
+[data-theme='dark'] .logo {
+    filter: brightness(0) invert(1); /* Белый в тёмной теме */
+}

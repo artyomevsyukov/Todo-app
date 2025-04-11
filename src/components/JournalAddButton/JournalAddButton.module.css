@@ -1,0 +1,29 @@
+.journal__add-btn {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: none;
+    border-radius: 3px;
+    /* width: 362px; */
+    /* width: 100%; */
+    /* height: 40px; */
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-text);
+}
+
+[data-theme='light'] .journal__add-btn {
+    filter: brightness(0) invert(0); /* Чёрный в светлой теме */
+}
+
+[data-theme='dark'] .journal__add-btn {
+    filter: brightness(0) invert(1); /* Белый в тёмной теме */
+}

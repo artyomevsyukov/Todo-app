@@ -1,0 +1,32 @@
+:root {
+    /* Тёмная тема (по умолчанию) */
+    --color-bg: var(--color-dark-bg);
+    --color-text: var(--color-dark-text);
+    --color-text-opacity: var(--color-dark-text-opacity);
+
+    /* Цвета для тёмной темы */
+    --color-dark-bg: #181818;
+    --color-dark-text: #fff;
+    --color-dark-text-opacity: rgba(255, 255, 255, 0.6);
+
+    /* Цвета для светлой темы */
+    --color-light-bg: #e7e7e7;
+    --color-light-text: #000;
+    --color-light-text-opacity: rgba(0, 0, 0, 0.6);
+}
+
+/* Светлая тема (активируется через data-theme="light") */
+[data-theme='light'] {
+    --color-bg: var(--color-light-bg);
+    --color-text: var(--color-light-text);
+    --color-text-opacity: var(--color-light-text-opacity);
+}
+
+/* Автоматическое переключение для системных настроек */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme='dark']) {
+        --color-bg: var(--color-light-bg);
+        --color-text: var(--color-light-text);
+        --color-text-opacity: var(--color-light-text-opacity);
+    }
+}

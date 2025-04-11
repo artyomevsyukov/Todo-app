@@ -1,0 +1,27 @@
+.card-btn {
+    border-radius: 3px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    text-align: start;
+    display: block;
+    transition: background-color var(--transition);
+}
+
+.card-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-btn:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] .card-btn {
+    filter: brightness(0) invert(0); /* Чёрный в светлой теме */
+}
+
+[data-theme='dark'] .card-btn {
+    filter: brightness(0) invert(1); /* Белый в тёмной теме */
+}

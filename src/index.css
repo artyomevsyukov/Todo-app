@@ -1,0 +1,42 @@
+:root {
+    --transition: 0.3s ease-in;
+    --font-family: 'Souce Sans 3', sans-serif;
+
+    --color-primary: #3498db;
+    --color-accent: #646cff;
+    --color-accent-hover: #535bf2;
+    --color-button: #312eb5;
+    --color-button-hover: #5d5bc9;
+
+    font-family: var(--font-family);
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark light;
+    /* color: rgba(255, 255, 255, 0.87); */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: inherit;
+}
+a:hover {
+    color: var(--color-accent-hover);
+}
+
+.accent {
+    background: var(--color-accent);
+}
+
+.accent:hover {
+    background: var(--color-accent-hover);
+}

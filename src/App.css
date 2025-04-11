@@ -1,0 +1,16 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: var(--transition); /* Плавное переключение */
+}
+
+.text-muted {
+    color: var(--color-text-opacity);
+}

@@ -1,0 +1,23 @@
+.button {
+    border-radius: 6px;
+    padding: 8px 30px;
+    width: 135px;
+    height: 42px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 162%;
+    text-align: center;
+    color: var(--color-text);
+    background-color: var(--color-button);
+    cursor: pointer;
+    border: none;
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+/* .button:hover {
+    background-color: var(--color-button-hover);
+} */
