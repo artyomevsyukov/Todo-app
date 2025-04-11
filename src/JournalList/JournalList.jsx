@@ -1,8 +1,20 @@
 import styles from './JournalList.module.css';
-
-// получить из контекста дата и через map  вывести его в компоненте CardItem обернув в CardButton
+import { TodoContext } from '../context/TodoContext';
+import { useContext } from 'react';
+import CardButton from '../components/CardButton/CardButton';
+import JournalItem from '../JournalItem/JournalItem';
 
 const JournalList = () => {
-    return <div className={styles['journsl-list']}>JournalList</div>;
+    const { todos } = useContext(TodoContext);
+
+    return (
+        <>
+            {todos.map(todo => (
+                <CardButton key={todo.id}>
+                    <JournalItem todo={todo} />
+                </CardButton>
+            ))}
+        </>
+    );
 };
 export default JournalList;

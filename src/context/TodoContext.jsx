@@ -4,10 +4,10 @@ import todoData from '../../JSON/data.json';
 export const TodoContext = createContext(null);
 
 export const TodoProvider = ({ children }) => {
-    const [todo, setTodo] = useState(todoData);
+    const [todos, setTodos] = useState(todoData);
 
     return (
-        <TodoContext.Provider value={{ todo, setTodo }}>
+        <TodoContext.Provider value={{ todos, setTodos }}>
             {children}
         </TodoContext.Provider>
     );

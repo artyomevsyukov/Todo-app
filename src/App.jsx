@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import JournalAddButton from './components/JournalAddButton/JournalAddButton';
 import Body from './layout/Body/Body';
 import LeftPanel from './layout/LeftPanel/LeftPanel';
+import JournalList from './JournalList/JournalList';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <LeftPanel>
                 <Header />
                 <JournalAddButton />
+                <JournalList />
                 <CardButton>Text</CardButton>
             </LeftPanel>
             <Body>
