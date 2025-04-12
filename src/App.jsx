@@ -15,7 +15,6 @@ function App() {
                 <Header />
                 <JournalAddButton />
                 <JournalList />
-                <CardButton>Text</CardButton>
             </LeftPanel>
             <Body>
                 <Button onClick={() => console.log('Отправить')}>

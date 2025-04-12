@@ -6,7 +6,6 @@ import JournalItem from '../JournalItem/JournalItem';
 
 const JournalList = () => {
     const { todos } = useContext(TodoContext);
-
     return (
         <>
             {todos.map(todo => (
