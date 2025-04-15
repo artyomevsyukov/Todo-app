@@ -1,7 +1,7 @@
-import styles from './JournalList.module.css';
-import { TodoContext } from '../context/TodoContext';
+// import styles from './JournalList.module.css';
+import { TodoContext } from '../../context/TodoContext';
 import { useContext } from 'react';
-import CardButton from '../components/CardButton/CardButton';
+import CardButton from '../CardButton/CardButton';
 import JournalItem from '../JournalItem/JournalItem';
 
 const JournalList = () => {

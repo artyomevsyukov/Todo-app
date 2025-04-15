@@ -2,6 +2,7 @@
     border-radius: 3px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.03);
+    /* background-color: var(--color-btn-bg); */
     border: none;
     cursor: pointer;
     color: var(--color-text);
@@ -19,9 +20,17 @@
 }
 
 [data-theme='light'] .card-btn {
-    filter: brightness(0) invert(0); /* Чёрный в светлой теме */
+    filter: brightness(0) invert(0);
 }
 
 [data-theme='dark'] .card-btn {
-    filter: brightness(0) invert(1); /* Белый в тёмной теме */
+    filter: brightness(0) invert(1);
 }
+
+/* [data-theme='light'] .card-btn {
+    color: #000;
+}
+
+[data-theme='dark'] .card-btn {
+    color: #fff;
+} */

@@ -1,3 +1,4 @@
+// import Button from '../components/Button/Button';
 import styles from './JournalItem.module.css';
 
 const JournalItem = ({ todo }) => {

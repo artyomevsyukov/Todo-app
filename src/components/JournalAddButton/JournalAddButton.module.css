@@ -21,9 +21,9 @@
 }
 
 [data-theme='light'] .journal__add-btn {
-    filter: brightness(0) invert(0); /* Чёрный в светлой теме */
+    filter: brightness(0) invert(0);
 }
 
 [data-theme='dark'] .journal__add-btn {
-    filter: brightness(0) invert(1); /* Белый в тёмной теме */
+    filter: brightness(0) invert(1);
 }
