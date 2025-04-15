@@ -19,6 +19,11 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.card-btn.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 3px solid var(--color-accent);
+}
+
 [data-theme='light'] .card-btn {
     filter: brightness(0) invert(0);
 }

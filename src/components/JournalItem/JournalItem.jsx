@@ -8,7 +8,9 @@ const JournalItem = ({ todo }) => {
 
     return (
         <>
-            <h2 className={styles['journal-item__title']}>{title}</h2>
+            <h2 className={styles['journal-item__title']}>
+                {title}+{todo.id}
+            </h2>
             <div className={styles['journal-item__body']}>
                 <div className={styles['journal-item__date']}>
                     {formateDate}

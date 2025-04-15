@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 // import todoData from '../../JSON/data.json';
 import initialData from '../../JSON/initialData.json';
@@ -8,7 +8,10 @@ export const TodoContext = createContext(null);
 
 export const TodoProvider = ({ children }) => {
     const [todos, setTodos] = useLocalStorage('data', initialData);
+    const [activeTodo, setActiveTodo] = useState('');
     const totalTodos = todos.length;
+
+    // const getActiveTodo = id => {};
 
     const mapTodos = todos => {
         if (!todos) {
@@ -30,11 +33,16 @@ export const TodoProvider = ({ children }) => {
         setTodos(todos.filter(todo => todo.id !== id));
     };
 
+    const value = {
+        todos,
+        setTodos,
+        totalTodos,
+        removeTodo,
+        activeTodo,
+        setActiveTodo,
+    };
+
     return (
-        <TodoContext.Provider
-            value={{ todos, setTodos, totalTodos, removeTodo }}
-        >
-            {children}
-        </TodoContext.Provider>
+        <TodoContext.Provider value={value}>{children}</TodoContext.Provider>
     );
 };
