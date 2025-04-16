@@ -11,8 +11,6 @@ export const TodoProvider = ({ children }) => {
     const [activeTodo, setActiveTodo] = useState('');
     const totalTodos = todos.length;
 
-    // const getActiveTodo = id => {};
-
     const mapTodos = todos => {
         if (!todos) {
             return;
@@ -30,6 +28,7 @@ export const TodoProvider = ({ children }) => {
     //     }
 
     const removeTodo = id => {
+        console.log('remove');
         setTodos(todos.filter(todo => todo.id !== id));
     };
 
@@ -37,6 +36,7 @@ export const TodoProvider = ({ children }) => {
         todos,
         setTodos,
         totalTodos,
+        mapTodos,
         removeTodo,
         activeTodo,
         setActiveTodo,

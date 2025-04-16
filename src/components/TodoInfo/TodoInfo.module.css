@@ -1,0 +1,25 @@
+.button {
+    border: none;
+    background-color: var(--color-bg);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+/* .img {
+} */
+
+[data-theme='light'] .img {
+    filter: brightness(0) invert(0);
+}
+
+[data-theme='dark'] .img {
+    filter: brightness(0) invert(1);
+}
+
+.button:hover {
+    transform: scale(1.15);
+}
+
+.button:active {
+    transform: scale(0.9);
+}

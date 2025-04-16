@@ -8,9 +8,7 @@ const CardButton = ({ children, todo = {}, className, ...props }) => {
 
     const handleClick = () => {
         if (!todo.id) return;
-        console.log(todo.id);
         setActiveTodo(todo.id === activeTodo ? null : todo.id);
-        console.log('click setActiveTodo: ', activeTodo);
     };
 
     const cl = cn(
