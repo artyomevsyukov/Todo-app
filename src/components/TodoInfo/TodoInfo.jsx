@@ -4,25 +4,24 @@ import archive from '/archive.svg';
 import styles from './TodoInfo.module.css';
 
 const TodoInfo = () => {
-    const { todos, activeTodo, removeTodo } = useContext(TodoContext);
+    const { activeTodo, removeTodo, getDisplayTodo } = useContext(TodoContext);
 
-    const currentTodo = todos.find(todo => todo.id === activeTodo) || null;
+    // const currentTodo = todos.find(todo => todo.id === activeTodo) || null;
+    const currentTodo = getDisplayTodo(activeTodo);
 
     if (!currentTodo) {
-        return (
-            <div className="todo-info-empty">Select a todo to view details</div>
-        );
+        return <div className="todo-info-empty">Выберите запись</div>;
     }
 
     //Перевод даты в объект Date и в строку для JSX
-    const newTodo = {
-        ...currentTodo,
-        date: new Intl.DateTimeFormat('ru-RU').format(
-            new Date(currentTodo.date),
-        ),
-    };
+    // const newTodo = {
+    //     ...currentTodo,
+    //     date: new Intl.DateTimeFormat('ru-RU').format(
+    //         new Date(currentTodo.date),
+    //     ),
+    // };
 
-    const { id, title, text, date } = newTodo;
+    const { id, title, text, date } = currentTodo;
 
     return (
         <section className="todo-info">

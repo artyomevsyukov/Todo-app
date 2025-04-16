@@ -3,6 +3,7 @@ import useLocalStorage from '../hooks/useLocalStorage';
 // import todoData from '../../JSON/data.json';
 import initialData from '../../JSON/initialData.json';
 import { v4 as uuidv4 } from 'uuid';
+import { formatTodoDate, prepareTodoForDisplay } from '../utils/dateFormatter';
 
 export const TodoContext = createContext(null);
 
@@ -10,6 +11,20 @@ export const TodoProvider = ({ children }) => {
     const [todos, setTodos] = useLocalStorage('data', initialData);
     const [activeTodo, setActiveTodo] = useState('');
     const totalTodos = todos.length;
+
+    const setFormattedTodos = newTodos => {
+        setTodos(
+            newTodos.map(todo => ({
+                ...todo,
+                date: new Date(todo.date), // сохраняем как Date объект
+            })),
+        );
+    };
+
+    const getDisplayTodo = todoId => {
+        const todo = todos.find(todo => todo.id === todoId);
+        return prepareTodoForDisplay(todo) || null;
+    };
 
     const mapTodos = todos => {
         if (!todos) {
@@ -34,12 +49,14 @@ export const TodoProvider = ({ children }) => {
 
     const value = {
         todos,
-        setTodos,
+        setTodos: setFormattedTodos,
         totalTodos,
         mapTodos,
         removeTodo,
         activeTodo,
         setActiveTodo,
+        formatTodo: prepareTodoForDisplay,
+        getDisplayTodo,
     };
 
     return (
