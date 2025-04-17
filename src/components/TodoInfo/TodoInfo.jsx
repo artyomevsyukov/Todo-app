@@ -6,20 +6,11 @@ import styles from './TodoInfo.module.css';
 const TodoInfo = () => {
     const { activeTodo, removeTodo, getDisplayTodo } = useContext(TodoContext);
 
-    // const currentTodo = todos.find(todo => todo.id === activeTodo) || null;
     const currentTodo = getDisplayTodo(activeTodo);
 
     if (!currentTodo) {
         return <div className="todo-info-empty">Выберите запись</div>;
     }
-
-    //Перевод даты в объект Date и в строку для JSX
-    // const newTodo = {
-    //     ...currentTodo,
-    //     date: new Intl.DateTimeFormat('ru-RU').format(
-    //         new Date(currentTodo.date),
-    //     ),
-    // };
 
     const { id, title, text, date } = currentTodo;
 
