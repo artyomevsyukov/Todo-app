@@ -14,26 +14,24 @@ export const TodoProvider = ({ children }) => {
     const addTodo = newTodo => {
         console.log('newTodo.date: ', newTodo.date);
         console.log('todos: ', todos);
-        setTodos(prev => [
-            ...prev,
-            {
-                ...newTodo,
-                // date: new Date(newTodo.date),
-                date: new Date(newTodo.date).toISOString(),
-                id: uuidv4(),
-            },
-        ]);
-        // console.log(
-        //     'setTodos: ',
-        //     setTodos(prev => [
-        //         ...prev,
-        //         {
-        //             ...newTodo,
-        //             date: new Date(newTodo.date),
-        //             id: uuidv4(),
-        //         },
-        //     ]),
-        // );
+        console.log('activeTodo: ', activeTodo);
+
+        const updatedTodo = {
+            ...newTodo,
+            date: new Date(newTodo.date).toISOString(),
+            id: activeTodo || uuidv4(), // Сохраняем существующий ID или создаём новый
+        };
+
+        setTodos(prev =>
+            activeTodo
+                ? prev.map(todo =>
+                      todo.id === activeTodo ? updatedTodo : todo,
+                  )
+                : [...prev, updatedTodo],
+        );
+
+        // Сбрасываем активную задачу после сохранения
+        setActiveTodo(null);
     };
 
     const setFormattedTodos = newTodos => {
@@ -61,25 +59,10 @@ export const TodoProvider = ({ children }) => {
         }
     };
 
-    // const mapTodos = todos => {
-    //     return todos?.map(todo => ({
-    //         ...todo,
-    //         date: new Date(todo.date), // Восстанавливаем Date
-    //     }));
-    // };
-
-    // const getDisplayTodo = todoId => {
-    //     const todo = todos.find(todo => todo.id === todoId);
-    //     if (!todo) return null;
-    //     return {
-    //         ...todo,
-    //         date: new Date(todo.date), // Восстанавливаем Date
-    //     };
-    // };
-
     const removeTodo = id => {
         console.log('remove');
         setTodos(todos.filter(todo => todo.id !== id));
+        setActiveTodo(null);
     };
 
     const value = {

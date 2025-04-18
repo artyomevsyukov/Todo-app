@@ -1,10 +1,14 @@
+import { useContext } from 'react';
+import { TodoContext } from '../../context/TodoContext';
 import CardButton from '../CardButton/CardButton';
 import styles from './JournalAddButton.module.css';
 
 const JournalAddButton = () => {
+    const { setActiveTodo } = useContext(TodoContext);
+
     return (
         <CardButton
-            onClick={() => console.log('Add')}
+            onClick={() => setActiveTodo(null)}
             className={styles['journal__add-btn']}
         >
             <svg
