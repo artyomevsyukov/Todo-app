@@ -47,3 +47,11 @@
         --color-text-opacity: var(--color-light-text-opacity);
     }
 }
+
+/* [data-theme='light'] img {
+    filter: brightness(0) saturate(100%) contrast(100%);
+}
+
+[data-theme='dark'] img {
+    filter: brightness(0) invert(1);
+} */

@@ -7,6 +7,13 @@
 .form-row {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+.input-lable-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .form-label {
@@ -20,15 +27,13 @@
     display: flex;
     align-items: center;
 }
-.input-date {
-    color: var(--color-text);
-}
 
 .input-textarea {
     font-weight: 400;
     font-size: 16px;
     line-height: 175%;
     background: none;
+    border: none;
     color: var(--color-text);
     transition: color var(--transition);
 }
@@ -47,7 +52,9 @@
     cursor: pointer;
     opacity: var(--icon-opacity);
     color: var(--icon-color);
-    transition: transform var(--transition);
+    transition:
+        transform var(--transition),
+        color var(--transition);
 }
 
 .delete:hover {
@@ -62,11 +69,6 @@
     transform: scale(0.95);
 }
 
-.archive-icon {
-    /* color: var(--icon-color); */
-    transition: color var(--transition);
-}
-
 /* [data-theme='light'] .delete img {
     filter: brightness(0) saturate(100%) contrast(1000%);
 }
@@ -74,3 +76,11 @@
 [data-theme='dark'] .delete img {
     filter: brightness(0) invert(1);
 } */
+
+[data-theme='light'] .form-label img {
+    filter: brightness(0) saturate(100%) contrast(100%);
+}
+
+[data-theme='dark'] .form-label img {
+    filter: brightness(0) invert(1);
+}

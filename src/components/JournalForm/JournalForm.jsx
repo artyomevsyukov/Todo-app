@@ -161,25 +161,35 @@ const JournalForm = () => {
                     </button>
                 )}
             </div>
-            <div className={styles['form-row']}>
-                <Input
-                    className={styles['input-date']}
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    ref={dateRef}
-                    onChange={handleChange}
-                    // required
-                />
-            </div>
-            <div className={styles['form-row']}>
-                <Input
-                    type="text"
-                    name="tag"
-                    value={formData.tag}
-                    onChange={handleChange}
-                    placeholder="Тег"
-                />
+            <div className={styles['input-lable-block']}>
+                <div className={styles['form-row']}>
+                    <label htmlFor="date" className={styles['form-label']}>
+                        <img src="/calendar.svg" alt="Иконка календаря" />
+                        <span>Дата</span>
+                    </label>
+                    <Input
+                        className={styles['input-date']}
+                        type="date"
+                        name="date"
+                        value={formData.date}
+                        ref={dateRef}
+                        onChange={handleChange}
+                        // required
+                    />
+                </div>
+                <div className={styles['form-row']}>
+                    <label htmlFor="tag" className={styles['form-label']}>
+                        <img src="/folder.svg" alt="Иконка папки" />
+                        <span>Метки</span>
+                    </label>
+                    <Input
+                        type="text"
+                        name="tag"
+                        value={formData.tag}
+                        onChange={handleChange}
+                        placeholder="Тег"
+                    />
+                </div>
             </div>
             <textarea
                 name="post"

@@ -1,17 +1,18 @@
 .input {
     border: none;
     background: none;
-
     font-weight: 600;
     font-size: 14px;
     line-height: normal;
-    border-bottom: 1px solid #333;
+    /* border-bottom: 1px solid #333; */
     width: 100%;
     background-color: var(--color-bg);
     color: var(--color-text);
-    transition:
+    /* transition:
         background-color var(--transition),
-        color var(--transition);
+        color var(--transition),
+        filter var(--transition); */
+    transition: var(--transition);
 }
 
 .input-title {
