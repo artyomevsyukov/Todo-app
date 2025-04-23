@@ -4,14 +4,9 @@
     gap: 30px;
 }
 
-.input {
-    border: none;
-    background: none;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: normal;
-    border-bottom: 1px solid #333;
-    width: 100%;
+.form-row {
+    display: flex;
+    align-items: center;
 }
 
 .form-label {
@@ -25,12 +20,17 @@
     display: flex;
     align-items: center;
 }
+.input-date {
+    color: var(--color-text);
+}
 
 .input-textarea {
     font-weight: 400;
     font-size: 16px;
     line-height: 175%;
     background: none;
+    color: var(--color-text);
+    transition: color var(--transition);
 }
 
 .invalid {
@@ -45,9 +45,32 @@
     background: none;
     border: none;
     cursor: pointer;
+    opacity: var(--icon-opacity);
+    color: var(--icon-color);
+    transition: transform var(--transition);
 }
 
 .delete:hover {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    transform: scale(1.1);
+    svg {
+        opacity: 0.8;
+    }
 }
+.delete:active {
+    transform: scale(0.95);
+}
+
+.archive-icon {
+    /* color: var(--icon-color); */
+    transition: color var(--transition);
+}
+
+/* [data-theme='light'] .delete img {
+    filter: brightness(0) saturate(100%) contrast(1000%);
+}
+
+[data-theme='dark'] .delete img {
+    filter: brightness(0) invert(1);
+} */

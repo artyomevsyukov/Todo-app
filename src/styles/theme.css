@@ -3,19 +3,28 @@
     --color-bg: var(--color-dark-bg);
     --color-text: var(--color-dark-text);
     --color-text-opacity: var(--color-dark-text-opacity);
-    /* --color-btn-bg: var(--color-dark-btn-bg); */
+    --color-btn-bg: var(--color-dark-btn-bg);
+    --color-btn-text: var(--color-btn-dark-text);
+    --icon-color: var(--icon-dark-color);
+    --icon-opacity: var(--icon-dark-opacity);
 
     /* Цвета для тёмной темы */
     --color-dark-bg: #181818;
     --color-dark-text: #fff;
     --color-dark-text-opacity: rgba(255, 255, 255, 0.6);
-    /* --color-dark-btn-bg: rgba(255, 255, 255, 0.03); */
+    --color-dark-btn-bg: #312eb5;
+    --color-btn-dark-text: #fff;
+    --icon-dark-opacity: 0.6;
 
     /* Цвета для светлой темы */
+    --icon-dark-color: #fff;
     --color-light-bg: #e7e7e7;
     --color-light-text: #000;
     --color-light-text-opacity: rgba(0, 0, 0, 0.6);
-    /* --color-light-btn-bg: rgba(0, 0, 0, 0.6); */
+    --color-light-btn-bg: #100cf3;
+    --color-btn-light-text: #fff;
+    --icon-light-color: #000;
+    --icon-light-opacity: 0.9;
 }
 
 /* Светлая тема (активируется через data-theme="light") */
@@ -23,7 +32,11 @@
     --color-bg: var(--color-light-bg);
     --color-text: var(--color-light-text);
     --color-text-opacity: var(--color-light-text-opacity);
-    /* --color-btn-bg: var(--color-light-btn-bg); */
+    --color-btn-bg: var(--color-light-btn-bg);
+    --color-btn-text: #fff;
+
+    --icon-color: var(--icon-light-color);
+    --icon-opacity: var(--icon-light-opacity);
 }
 
 /* Автоматическое переключение для системных настроек */

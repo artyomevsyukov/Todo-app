@@ -1,0 +1,33 @@
+.input {
+    border: none;
+    background: none;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: normal;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+.input-title {
+    font-size: 32px;
+}
+.invalid {
+    border-radius: 5px;
+    background: rgb(145, 96, 96);
+}
+
+/* Тёмная тема (кнопка остаётся стандартной) */
+[data-theme='light'] .input[type='date']::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Светлая тема (инвертируем кнопку в черную) */
+[data-theme='dark'] .input[type='date']::-webkit-calendar-picker-indicator {
+    filter: none;
+}

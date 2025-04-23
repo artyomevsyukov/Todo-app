@@ -9,8 +9,9 @@
     font-size: 16px;
     line-height: 162%;
     text-align: center;
-    color: var(--color-text);
-    background-color: var(--color-button);
+    color: var(--color-btn-text);
+    /* background-color: var(--color-button); */
+    background-color: var(--color-btn-bg);
     cursor: pointer;
     border: none;
     transition:
