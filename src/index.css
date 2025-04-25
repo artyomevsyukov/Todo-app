@@ -40,3 +40,8 @@ a:hover {
 .accent:hover {
     background: var(--color-accent-hover);
 }
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
